@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="home">
+    <section class="section">
+      <h1 class="title is-1">Welcome to BeatMods</h1>
+      <h3 class="subtitle is-3">A Beat Saber mod repository maintained by the Beat Saber Modding Group</h3>
+
+      <hr>
+
+      <p>
+        Need help installing mods?
+        Check out the <a href="https://bsmg.wiki/beginners-guide">beginner's guide</a>.<br>
+        You can also <a href="https://discord.gg/beatsabermods">join the official Discord</a>.
+      </p>
+      <span>Mod installers are available:</span>
+      <ul>
+        <li><a href="https://github.com/Assistant/ModAssistant/releases/latest">
+          ModAssistant
+        </a></li>
+        <li><a href="https://github.com/beat-saber-modding-group/BeatSaberModInstaller/releases/latest">
+          Beat Saber Mod Installer
+        </a></li>
+        <li><a href="https://bsaber.com/beatdrop/">
+          BeatDrop
+        </a></li>
+      </ul>
+    </section>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+  import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+  @Component({})
+  export default class Home extends Vue {}
 </script>
+
+<style scoped>
+  ul {
+    list-style: disc outside;
+    margin-left: 1.5em;
+  }
+
+  p {
+    margin-bottom: 0.75em;
+  }
+</style>

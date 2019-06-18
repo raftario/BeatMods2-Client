@@ -5,18 +5,22 @@
       role="navigation"
     >
       <div class="navbar-brand">
-        <a
+        <router-link
           class="navbar-item"
-          is="router-link"
           to="/"
         >
-          <img src="https://raw.githubusercontent.com/beat-saber-modding-group/BeatMods-Website/master/src/client/app/layouts/default/logo--mobile.png">
-          <span>BeatMods</span>
-        </a>
+          <img
+            src="./assets/logo-compact.svg"
+            alt="logo"
+            class="logo"
+          >
+          BeatMods
+        </router-link>
 
         <a
           role="button"
           class="navbar-burger burger"
+          @click="menuOpen = !menuOpen"
         >
           <span></span>
           <span></span>
@@ -38,8 +42,11 @@
         </div>
       </div>
     </nav>
-    <div class="columns">
-      <div class="column is-one-fifth has-background-light">
+    <div class="columns is-gapless is-desktop">
+      <b-collapse
+        class="column is-one-fifth-desktop has-background-light"
+        :open="menuOpen"
+      >
         <div class="menu">
           <p class="menu-label">
             Browse
@@ -120,7 +127,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </b-collapse>
       <div class="column">
         <router-view/>
       </div>
@@ -128,12 +135,31 @@
   </div>
 </template>
 
-<style>
+<script lang="ts">
+export default {
+  data () {
+    return {
+      menuOpen: true
+    }
+  }
+}
+</script>
+
+<style scoped>
   .columns {
-    height: calc(100vh - 2.5rem);
+    height: calc(100vh - 3.25rem);
+  }
+
+  .column {
+    overflow-y: auto;
   }
 
   .menu {
     padding: 0.75em;
+  }
+
+  .logo {
+    margin-right: 0.5em;
+    height: 1.75rem;
   }
 </style>
