@@ -50,7 +50,7 @@
         class="column is-one-fifth-desktop has-background-light"
         :open="menuOpen"
       >
-        <div class="menu">
+        <nav class="menu">
           <p class="menu-label">
             Browse
           </p>
@@ -147,7 +147,7 @@
           >
             Login
           </b-button>
-        </div>
+        </nav>
       </b-collapse>
       <div class="column">
         <transition

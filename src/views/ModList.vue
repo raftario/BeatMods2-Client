@@ -7,19 +7,22 @@
       destroy-on-hide
     >
       <b-tab-item label="PC">
-        PC mods
+        <ModListMenu></ModListMenu>
       </b-tab-item>
       <b-tab-item label="Quest">
-        Quest mods
+        <ModListMenu></ModListMenu>
       </b-tab-item>
     </b-tabs>
   </div>
 </template>
 
 <script lang="ts">
+import ModListMenu from '@/components/ModListMenu.vue'
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({})
+@Component({
+  components: { ModListMenu }
+})
 export default class ModList extends Vue {
   public activeTab: number = 0
 }
