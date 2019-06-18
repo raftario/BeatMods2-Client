@@ -30,6 +30,9 @@ $link-focus-border: $primary;
   @extend %custom-list;
   list-style: number outside;
 }
+.mb {
+  margin-bottom: 0.75em;
+}
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

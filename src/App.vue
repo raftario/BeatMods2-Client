@@ -42,7 +42,10 @@
         </div>
       </div>
     </nav>
-    <div class="columns is-gapless is-desktop">
+    <div
+      class="columns is-gapless is-desktop"
+      @click="menuOpen = true"
+    >
       <b-collapse
         class="column is-one-fifth-desktop has-background-light"
         :open="menuOpen"
@@ -134,6 +137,16 @@
               </router-link>
             </li>
           </ul>
+
+          <b-button
+            type="is-dark"
+            class="is-hidden-desktop login-mobile is-fullwidth"
+            icon-pack="fab"
+            icon-left="github"
+            outlined
+          >
+            Log in
+          </b-button>
         </div>
       </b-collapse>
       <div class="column">
@@ -166,6 +179,10 @@
 
   .menu {
     padding: 0.75em;
+  }
+
+  .login-mobile {
+    margin-top: 1.75em;
   }
 
   .logo {

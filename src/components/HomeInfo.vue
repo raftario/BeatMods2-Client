@@ -5,7 +5,7 @@
 
     <hr>
 
-    <p>
+    <p class="mb">
       Need help installing mods?
       Check out the <a href="https://bsmg.wiki/beginners-guide">beginner's guide</a>.<br>
       You can also <a href="https://discord.gg/beatsabermods">join the official Discord</a>.
@@ -30,9 +30,3 @@ export default class HomeInfo extends Vue {
   ]
 }
 </script>
-
-<style scoped>
-  p {
-    margin-bottom: 0.75em;
-  }
-</style>
