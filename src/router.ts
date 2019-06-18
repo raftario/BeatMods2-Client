@@ -1,3 +1,4 @@
+import NotFound from '@/views/NotFound.vue'
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
@@ -23,6 +24,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '*',
+      name: '404',
+      component: NotFound
     }
   ]
 })
