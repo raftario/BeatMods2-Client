@@ -71,6 +71,14 @@
             </li>
             <li>
               <router-link
+                to="/users"
+                active-class="is-active"
+              >
+                Users
+              </router-link>
+            </li>
+            <li>
+              <router-link
                 to="/about"
                 active-class="is-active"
               >
@@ -83,6 +91,15 @@
             Account
           </p>
           <ul class="menu-list">
+            <li>
+              <router-link
+                to="/upload"
+                active-class="is-active"
+                exact
+              >
+                Upload
+              </router-link>
+            </li>
             <li>
               <router-link
                 to="/user"
@@ -109,15 +126,6 @@
           <ul class="menu-list">
             <li>
               <router-link
-                to="/settings/accounts"
-                active-class="is-active"
-                exact
-              >
-                Accounts
-              </router-link>
-            </li>
-            <li>
-              <router-link
                 to="/settings"
                 active-class="is-active"
                 exact
@@ -129,7 +137,9 @@
         </div>
       </b-collapse>
       <div class="column">
-        <router-view/>
+        <transition name="fade">
+          <router-view/>
+        </transition>
       </div>
     </div>
   </div>
