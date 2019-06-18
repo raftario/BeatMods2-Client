@@ -11,33 +11,27 @@
       You can also <a href="https://discord.gg/beatsabermods">join the official Discord</a>.
     </p>
     <span>Mod installers are available:</span>
-    <ul>
-      <li><a href="https://github.com/Assistant/ModAssistant/releases/latest">
-        ModAssistant
-      </a></li>
-      <li><a href="https://github.com/beat-saber-modding-group/BeatSaberModInstaller/releases/latest">
-        Beat Saber Mod Installer
-      </a></li>
-      <li><a href="https://bsaber.com/beatdrop/">
-        BeatDrop
-      </a></li>
-    </ul>
+    <CustomList :contents="installerLinks"></CustomList>
   </section>
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator'
+import CustomList from '@/components/CustomList.vue'
+import { Component, Vue } from 'vue-property-decorator'
 
-  @Component({})
-  export default class HomeInfo extends Vue {}
+@Component({
+  components: { CustomList }
+})
+export default class HomeInfo extends Vue {
+  public installerLinks: string[] = [
+    '<a href="https://github.com/Assistant/ModAssistant/releases/latest">ModAssistant</a>',
+    '<a href="https://github.com/beat-saber-modding-group/BeatSaberModInstaller/releases/latest">Beat Saber Mod Installer</a>',
+    '<a href="https://bsaber.com/beatdrop/">BeatDrop</a>'
+  ]
+}
 </script>
 
 <style scoped>
-  ul {
-    list-style: disc outside;
-    margin-left: 1.5em;
-  }
-
   p {
     margin-bottom: 0.75em;
   }

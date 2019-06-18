@@ -146,13 +146,13 @@
 </template>
 
 <script lang="ts">
-export default {
-  data () {
-    return {
-      menuOpen: true
+  export default {
+    data () {
+      return {
+        menuOpen: true
+      }
     }
   }
-}
 </script>
 
 <style scoped>
