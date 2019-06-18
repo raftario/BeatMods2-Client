@@ -12,6 +12,9 @@
   "rules": {
     "ordered-imports": true,
     "object-literal-sort-keys": false,
-    "max-line-length": [true, 160]
+    "max-line-length": [
+      true,
+      160
+    ]
   }
 }

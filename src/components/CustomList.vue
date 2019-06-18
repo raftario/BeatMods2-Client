@@ -1,8 +1,8 @@
 <template>
-  <ul v-if="listType === 'unordered'">
+  <ul v-if="listType === 'unordered'" class="custom-ul">
     <li v-for="e in contents" v-html="e"></li>
   </ul>
-  <ol v-else>
+  <ol v-else class="custom-ol">
     <li v-for="e in contents" v-html="e"></li>
   </ol>
 </template>
@@ -26,10 +26,3 @@ export default class CustomList extends Vue {
   public listType: string
 }
 </script>
-
-<style scoped>
-  ul, ol {
-    list-style: disc outside;
-    margin-left: 1.5em;
-  }
-</style>

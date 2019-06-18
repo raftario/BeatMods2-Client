@@ -1,9 +1,9 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './style.scss'
 
 Vue.use(Buefy, { defaultIconPack: 'fas' })
 
