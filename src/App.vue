@@ -27,7 +27,10 @@
           <span></span>
         </a>
       </div>
-      <div class="navbar-menu">
+      <div
+        class="navbar-menu"
+        @click.self.stop="menuOpen = true"
+      >
         <div class="navbar-end">
           <div class="navbar-item">
             <b-button
@@ -36,16 +39,13 @@
               icon-left="github"
               outlined
             >
-              Log in
+              Login
             </b-button>
           </div>
         </div>
       </div>
     </nav>
-    <div
-      class="columns is-gapless is-desktop"
-      @click="menuOpen = true"
-    >
+    <div class="columns is-gapless is-desktop">
       <b-collapse
         class="column is-one-fifth-desktop has-background-light"
         :open="menuOpen"
@@ -145,12 +145,15 @@
             icon-left="github"
             outlined
           >
-            Log in
+            Login
           </b-button>
         </div>
       </b-collapse>
       <div class="column">
-        <transition name="fade">
+        <transition
+          name="fade"
+          mode="out-in"
+        >
           <router-view/>
         </transition>
       </div>
