@@ -37,5 +37,24 @@ $link-focus-border: $primary;
   cursor: pointer;
 }
 
+.markdown {
+  @for $i from 1 through 5 {
+    h#{$i} {
+      @extend .title;
+      @extend .is-#{$i};
+    }
+  }
+  table {
+    @extend .table;
+    @extend .is-striped
+  }
+  ul {
+    @extend .custom-ul;
+  }
+  ul {
+    @extend .custom-ol;
+  }
+}
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
