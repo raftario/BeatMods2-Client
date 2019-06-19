@@ -37,10 +37,10 @@
     public approval: object = {
       label: 'Status',
       checkboxes: [
-        { display: 'Approved', value: 'approved' },
-        { display: 'Declined', value: 'declined' },
-        { display: 'Pending', value: 'pending' },
-        { display: 'Inactive', value: 'inactive' }
+        { label: 'Approved', value: 'approved' },
+        { label: 'Declined', value: 'declined' },
+        { label: 'Pending', value: 'pending' },
+        { label: 'Inactive', value: 'inactive' }
       ],
       defaults: ['approved']
     }
@@ -48,9 +48,9 @@
     public gameVersion: object = {
       label: 'Game version',
       checkboxes: [
-        { display: '1.1.0', value: '1.1.0' },
-        { display: '1.0.0', value: '1.0.0' },
-        { display: '0.13.2', value: '0.13.2' }
+        { label: '1.1.0', value: '1.1.0' },
+        { label: '1.0.0', value: '1.0.0' },
+        { label: '0.13.2', value: '0.13.2' }
       ],
       defaults: ['1.1.0']
     }
@@ -58,8 +58,8 @@
     public tags: object = {
       label: 'Tags',
       checkboxes: [
-        { display: 'Core', value: 'Core' },
-        { display: 'Utils', value: 'Utils' }
+        { label: 'Core', value: 'Core' },
+        { label: 'Utils', value: 'Utils' }
       ],
       defaults: ['Core', 'Utils']
     }
