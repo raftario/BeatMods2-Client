@@ -4,7 +4,7 @@
       slot="trigger"
       role="button"
     >
-      <span>{{display}}</span>
+      <span>{{label}}</span>
       <b-icon icon="caret-down"></b-icon>
     </a>
 
@@ -18,7 +18,7 @@
           v-model="values"
           :native-value="c.value"
         >
-          {{ c.display }}
+          {{ c.label }}
         </b-checkbox>
       </div>
     </b-dropdown-item>
@@ -33,7 +33,7 @@
     @Prop({
       required: true
     })
-    public display: string
+    public label: string
 
     @Prop({
       required: true

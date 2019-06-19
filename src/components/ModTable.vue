@@ -14,7 +14,7 @@
         label="Name"
         sortable
       >
-        {{ props.row.name + ' ' + props.row.version }}
+        <span class="has-text-primary has-text-weight-medium">{{ props.row.name }}</span> {{ props.row.version }}
       </b-table-column>
       <b-table-column
         field="author"

@@ -2,10 +2,13 @@
   <div class="level">
     <div class="level-left has-text-weight-medium">
       <div class="level-item">
-        <DropdownCheckboxes v-bind="gameversion"></DropdownCheckboxes>
+        <DropdownCheckboxes v-bind="approval"></DropdownCheckboxes>
       </div>
       <div class="level-item">
-        <DropdownCheckboxes v-bind="approval"></DropdownCheckboxes>
+        <DropdownCheckboxes v-bind="gameVersion"></DropdownCheckboxes>
+      </div>
+      <div class="level-item">
+        <DropdownCheckboxes v-bind="tags"></DropdownCheckboxes>
       </div>
     </div>
     <div class="level-right">
@@ -31,8 +34,19 @@
     components: { DropdownCheckboxes }
   })
   export default class ModListMenu extends Vue {
-    public gameversion: object = {
-      display: 'Game version',
+    public approval: object = {
+      label: 'Status',
+      checkboxes: [
+        { display: 'Approved', value: 'approved' },
+        { display: 'Declined', value: 'declined' },
+        { display: 'Pending', value: 'pending' },
+        { display: 'Inactive', value: 'inactive' }
+      ],
+      defaults: ['approved']
+    }
+
+    public gameVersion: object = {
+      label: 'Game version',
       checkboxes: [
         { display: '1.1.0', value: '1.1.0' },
         { display: '1.0.0', value: '1.0.0' },
@@ -41,15 +55,13 @@
       defaults: ['1.1.0']
     }
 
-    public approval: object = {
-      display: 'Status',
+    public tags: object = {
+      labelgit: 'Tags',
       checkboxes: [
-        { display: 'Approved', value: 'approved' },
-        { display: 'Declined', value: 'declined' },
-        { display: 'Pending', value: 'pending' },
-        { display: 'Inactive', value: 'inactive' }
+        { display: 'Core', value: 'Core' },
+        { display: 'Utils', value: 'Utils' }
       ],
-      defaults: ['approved']
+      defaults: ['Core', 'Utils']
     }
   }
 </script>
