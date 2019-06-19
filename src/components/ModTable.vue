@@ -42,42 +42,40 @@
         label="Status"
         sortable
       >
-        <span
-          class="tag is-success"
+        <b-tag
+          type="is-success"
           v-if="props.row.status === 'approved'"
         >
           Approved
-        </span>
-        <span
-          class="tag is-danger"
+        </b-tag>
+        <b-tag
+          type="is-danger"
           v-else-if="props.row.status === 'declined'"
         >
           Declined
-        </span>
-        <span
-          class="tag is-warning"
+        </b-tag>
+        <b-tag
+          type="is-warning"
           v-else-if="props.row.status === 'pending'"
         >
           Pending
-        </span>
-        <span
-          class="tag is-light"
-          v-else-if="props.row.status === 'inactive'"
-        >
+        </b-tag>
+        <b-tag v-else-if="props.row.status === 'inactive'">
           Inactive
-        </span>
+        </b-tag>
       </b-table-column>
       <b-table-column
         field="tags"
         label="Tags"
       >
-        <span
-          class="tag is-light"
-          v-for="t in props.row.tags"
-          :key="t"
-        >
-          {{ t }}
-        </span>
+        <b-taglist>
+          <b-tag
+            v-for="t in props.row.tags"
+            :key="t"
+          >
+            {{ t }}
+          </b-tag>
+        </b-taglist>
       </b-table-column>
     </template>
   </b-table>
