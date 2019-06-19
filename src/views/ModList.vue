@@ -44,7 +44,12 @@
         author: 'DaNike',
         gameVersion: '1.1.0',
         upload: '2019-06-19',
-        status: 'approved'
+        status: 'approved',
+        tags: [
+          'Core',
+          'Mods',
+          'Minecraft'
+        ]
       },
       {
         name: 'SongCore',
@@ -52,7 +57,11 @@
         author: 'Kyle',
         gameVersion: '1.1.0',
         upload: '2019-06-12',
-        status: 'pending'
+        status: 'pending',
+        tags: [
+          'Core',
+          'Songs'
+        ]
       }
     ]
     public questModsData: object[] = [
@@ -62,7 +71,11 @@
         author: 'emulamer',
         gameVersion: '1.1.0',
         upload: '2019-06-14',
-        status: 'approved'
+        status: 'approved',
+        tags: [
+          'Core',
+          'Mods'
+        ]
       }
     ]
   }

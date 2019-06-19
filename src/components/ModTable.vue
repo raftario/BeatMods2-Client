@@ -2,6 +2,7 @@
   <b-table
     :data="data"
     :loading="isLoading"
+    :row-class="() => 'pointer'"
     default-sort="upload"
     default-sort-direction="desc"
     hoverable
@@ -66,6 +67,18 @@
           Inactive
         </span>
       </b-table-column>
+      <b-table-column
+        field="tags"
+        label="Tags"
+      >
+        <span
+          class="tag is-light"
+          v-for="t in props.row.tags"
+          :key="t"
+        >
+          {{ t }}
+        </span>
+      </b-table-column>
     </template>
   </b-table>
 </template>
@@ -86,9 +99,3 @@
     public isLoading: boolean
   }
 </script>
-
-<style scoped>
-  td {
-    cursor: pointer;
-  }
-</style>

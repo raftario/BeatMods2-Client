@@ -33,6 +33,9 @@ $link-focus-border: $primary;
 .mb {
   margin-bottom: 0.75em;
 }
+.pointer {
+  cursor: pointer;
+}
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
