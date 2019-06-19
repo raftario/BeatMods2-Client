@@ -56,7 +56,7 @@
     }
 
     public tags: object = {
-      labelgit: 'Tags',
+      label: 'Tags',
       checkboxes: [
         { display: 'Core', value: 'Core' },
         { display: 'Utils', value: 'Utils' }
