@@ -22,17 +22,21 @@ $link-focus-border: $primary;
 %custom-list {
   margin-left: 1.5em;
 }
+
 .custom-ul {
   @extend %custom-list;
   list-style: disc outside;
 }
+
 .custom-ol {
   @extend %custom-list;
   list-style: number outside;
 }
+
 .mb {
   margin-bottom: 0.75em;
 }
+
 .pointer {
   cursor: pointer;
 }
@@ -41,16 +45,19 @@ $link-focus-border: $primary;
   @for $i from 1 through 5 {
     h#{$i} {
       @extend .title;
-      @extend .is-#{$i};
+      @extend .is-#{$i + 1};
     }
   }
+
   table {
     @extend .table;
     @extend .is-striped
   }
+
   ul {
     @extend .custom-ul;
   }
+
   ul {
     @extend .custom-ol;
   }
