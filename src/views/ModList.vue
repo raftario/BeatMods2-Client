@@ -1,6 +1,3 @@
-import { Approval } from '../types'
-import { Approval } from '../types'
-import { Approval } from '../types'
 <template>
   <div id="mods">
     <b-tabs

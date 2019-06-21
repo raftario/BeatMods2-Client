@@ -19,7 +19,7 @@
 
         <a
           role="button"
-          class="navbar-burger burger"
+          :class="{ 'navbar-burger': true, 'burger': true, 'is-active': menuOpen }"
           @click="menuOpen = !menuOpen"
         >
           <span></span>
