@@ -108,6 +108,14 @@
             && this.filters.gameVersion.some(gv => m.gameVersion === gv)
             && this.filters.tags.some(t => m.tags.some(mt => t === mt))
         })
+        .filter(m => {
+          try {
+            const regex: RegExp = new RegExp(this.filters.search, 'i')
+            return regex.test(m.name)
+          } catch {
+            return m.name.toLowerCase().includes(this.filters.search.toLowerCase())
+          }
+        })
     }
   }
 </script>
