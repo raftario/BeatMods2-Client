@@ -15,6 +15,7 @@
           <ModTable
             :data="pcModsData"
             :filters="filters"
+            :loading="pcLoading"
           ></ModTable>
         </b-tab-item>
       </transition>
@@ -44,33 +45,9 @@
   })
   export default class ModList extends Vue {
     public activeTab: number = 0
-    public pcModsData: IModSimple[] = [
-      {
-        name: 'BSIPA',
-        version: '1.2.3',
-        author: 'DaNike',
-        gameVersion: '1.1.0',
-        upload: '2019-06-19',
-        approval: Approval.Approved,
-        tags: [
-          'Core',
-          'Mods',
-          'Minecraft'
-        ]
-      },
-      {
-        name: 'SongCore',
-        version: '3.2.1',
-        author: 'Kyle',
-        gameVersion: '1.1.0',
-        upload: '2019-06-12',
-        approval: Approval.Pending,
-        tags: [
-          'Core',
-          'Songs'
-        ]
-      }
-    ]
+    public pcLoading: boolean = false
+
+    public pcModsData: IModSimple[] = require('../assets/dump.json')
     public questModsData: IModSimple[] = [
       {
         name: 'Patcher',

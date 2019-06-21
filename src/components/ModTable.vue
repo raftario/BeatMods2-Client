@@ -3,6 +3,8 @@
     :data="filteredData"
     :loading="isLoading"
     :row-class="() => 'pointer'"
+    :paginated="true"
+    :per-page="50"
     default-sort="upload"
     default-sort-direction="desc"
     hoverable
@@ -77,6 +79,11 @@
           </b-tag>
         </b-taglist>
       </b-table-column>
+    </template>
+    <template slot="empty">
+      <section class="section">
+        <p class="has-text-grey has-text-centered">No mods found matching the provided filters.</p>
+      </section>
     </template>
   </b-table>
 </template>

@@ -79,7 +79,17 @@ export default class ModListMenu extends Vue {
     label: 'Tags',
     checkboxes: [
       { label: 'Core', value: 'Core' },
-      { label: 'Utils', value: 'Utils' }
+      { label: 'Cosmetic', value: 'Cosmetic' },
+      { label: 'Practice / Training', value: 'Practice / Training' },
+      { label: 'Gameplay', value: 'Gameplay' },
+      { label: 'Stream Tools', value: 'Stream Tools' },
+      { label: 'Libraries', value: 'Libraries' },
+      { label: 'UI Enhancements', value: 'UI Enhancements' },
+      { label: 'Lighting', value: 'Lighting' },
+      { label: 'Tweaks / Tools', value: 'Tweaks / Tools' },
+      { label: 'Multiplayer', value: 'Multiplayer' },
+      { label: 'Text Changes', value: 'Text Changes' },
+      { label: 'Other', value: 'Other' }
     ],
     values: this.defaults.tags
   }
