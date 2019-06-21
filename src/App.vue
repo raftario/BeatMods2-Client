@@ -162,12 +162,11 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data () {
-      return {
-        menuOpen: true
-      }
-    }
+  import { Component, Vue } from 'vue-property-decorator'
+
+  @Component({})
+  export default class App extends Vue {
+    public menuOpen: boolean = true
   }
 </script>
 
