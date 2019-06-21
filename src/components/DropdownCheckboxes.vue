@@ -17,6 +17,7 @@
         <b-checkbox
           v-model="values"
           :native-value="c.value"
+          @input="$emit('change', values)"
         >
           {{ c.label }}
         </b-checkbox>
@@ -26,7 +27,8 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator'
+  import { IDropdownCheckbox } from '@/types'
+  import { Component, Model, Prop, Vue } from 'vue-property-decorator'
 
   @Component({})
   export default class DropdownCheckboxes extends Vue {
@@ -38,12 +40,9 @@
     @Prop({
       required: true
     })
-    public checkboxes: object[]
+    public checkboxes: Array<IDropdownCheckbox<any>>
 
-    @Prop({
-      default: []
-    })
-    public defaults: any[]
+    @Model('change', { type: Array }) public defaults: any[]
 
     public values: any[] = this.defaults
   }

@@ -1,6 +1,6 @@
 <template>
   <b-table
-    :data="data"
+    :data="filteredData"
     :loading="isLoading"
     :row-class="() => 'pointer'"
     default-sort="upload"
@@ -44,23 +44,23 @@
       >
         <b-tag
           type="is-success"
-          v-if="props.row.status === 'approved'"
+          v-if="props.row.approval === 'approved'"
         >
           Approved
         </b-tag>
         <b-tag
           type="is-danger"
-          v-else-if="props.row.status === 'declined'"
+          v-else-if="props.row.approval === 'declined'"
         >
           Declined
         </b-tag>
         <b-tag
           type="is-warning"
-          v-else-if="props.row.status === 'pending'"
+          v-else-if="props.row.approval === 'pending'"
         >
           Pending
         </b-tag>
-        <b-tag v-else-if="props.row.status === 'inactive'">
+        <b-tag v-else-if="props.row.approval === 'inactive'">
           Inactive
         </b-tag>
       </b-table-column>
@@ -82,6 +82,7 @@
 </template>
 
 <script lang="ts">
+  import { IModListMenuFilters, IModSimple } from '@/types'
   import { Component, Prop, Vue } from 'vue-property-decorator'
 
   @Component({})
@@ -89,11 +90,24 @@
     @Prop({
       required: true
     })
-    public data: object[]
+    public data: IModSimple[]
 
     @Prop({
       default: false
     })
     public isLoading: boolean
+
+    @Prop({
+      required: true
+    }) public filters: IModListMenuFilters
+
+    get filteredData (): object[] {
+      return this.data
+        .filter(m => {
+          return this.filters.approval.some(f => m.approval === f)
+            && this.filters.gameVersion.some(gv => m.gameVersion === gv)
+            && this.filters.tags.some(t => m.tags.some(mt => t === mt))
+        })
+    }
   }
 </script>

@@ -1,3 +1,6 @@
+import { Approval } from '../types'
+import { Approval } from '../types'
+import { Approval } from '../types'
 <template>
   <div id="mods">
     <b-tabs
@@ -6,13 +9,16 @@
       expanded
       destroy-on-hide
     >
-      <ModListMenu></ModListMenu>
+      <ModListMenu v-model="filters"></ModListMenu>
       <transition
         name="fade"
         mode="out-in"
       >
         <b-tab-item label="PC">
-          <ModTable :data="pcModsData"></ModTable>
+          <ModTable
+            :data="pcModsData"
+            :filters="filters"
+          ></ModTable>
         </b-tab-item>
       </transition>
       <transition
@@ -20,7 +26,10 @@
         mode="out-in"
       >
         <b-tab-item label="Quest">
-          <ModTable :data="questModsData"></ModTable>
+          <ModTable
+            :data="questModsData"
+            :filters="filters"
+          ></ModTable>
         </b-tab-item>
       </transition>
     </b-tabs>
@@ -30,6 +39,7 @@
 <script lang="ts">
   import ModListMenu from '@/components/ModListMenu.vue'
   import ModTable from '@/components/ModTable.vue'
+  import { Approval, IModListMenuFilters, IModSimple } from '@/types'
   import { Component, Vue } from 'vue-property-decorator'
 
   @Component({
@@ -37,14 +47,14 @@
   })
   export default class ModList extends Vue {
     public activeTab: number = 0
-    public pcModsData: object[] = [
+    public pcModsData: IModSimple[] = [
       {
         name: 'BSIPA',
         version: '1.2.3',
         author: 'DaNike',
         gameVersion: '1.1.0',
         upload: '2019-06-19',
-        status: 'approved',
+        approval: Approval.Approved,
         tags: [
           'Core',
           'Mods',
@@ -57,27 +67,34 @@
         author: 'Kyle',
         gameVersion: '1.1.0',
         upload: '2019-06-12',
-        status: 'pending',
+        approval: Approval.Pending,
         tags: [
           'Core',
           'Songs'
         ]
       }
     ]
-    public questModsData: object[] = [
+    public questModsData: IModSimple[] = [
       {
         name: 'Patcher',
         version: '0.1.0',
         author: 'emulamer',
         gameVersion: '1.1.0',
         upload: '2019-06-14',
-        status: 'approved',
+        approval: Approval.Approved,
         tags: [
           'Core',
           'Mods'
         ]
       }
     ]
+
+    public filters: IModListMenuFilters = {
+      approval: [Approval.Approved],
+      gameVersion: ['1.1.0'],
+      tags: ['Core'],
+      search: ''
+    }
   }
 </script>
 
