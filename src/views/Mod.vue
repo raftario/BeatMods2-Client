@@ -33,7 +33,7 @@ import { Approval } from '../types'
             <p class="heading">Author</p>
             <router-link
               class="title-nocolor"
-              to="/"
+              :to="'/user/' + mod.author"
             >
               {{ mod.author }}
             </router-link>
