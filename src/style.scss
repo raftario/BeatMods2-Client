@@ -58,8 +58,12 @@ $link-focus-border: $primary;
     @extend .custom-ul;
   }
 
-  ul {
+  ol {
     @extend .custom-ol;
+  }
+
+  p, div, ul, ol, table, pre {
+    @extend .mb
   }
 }
 

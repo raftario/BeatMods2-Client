@@ -23,6 +23,8 @@
     get htmlContents (): string {
       return marked(this.contents, {
         baseUrl: this.baseUrl,
+        breaks: true,
+        headerPrefix: 'md-',
         sanitize: true,
         sanitizer: sanitize
       })

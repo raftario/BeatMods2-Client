@@ -5,6 +5,7 @@
     :row-class="() => 'pointer'"
     :paginated="true"
     :per-page="50"
+    @click="handleClick"
     default-sort="upload"
     default-sort-direction="desc"
     hoverable
@@ -124,5 +125,17 @@
           }
         })
     }
+
+    public handleClick (row: IModSimple): void {
+      this.$router.push({ name: 'mod', params: { modName: row.name, modVersion: row.version } })
+    }
   }
 </script>
+
+<style lang="scss" scoped>
+  tr:hover {
+    span.has-text-primary {
+      font-weight: bold !important;
+    }
+  }
+</style>

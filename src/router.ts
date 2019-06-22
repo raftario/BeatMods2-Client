@@ -2,6 +2,7 @@ import NotFound from '@/views/NotFound.vue'
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Mod from './views/Mod.vue'
 import ModList from './views/ModList.vue'
 
 Vue.use(Router)
@@ -24,6 +25,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/mod/:modName/:modVersion',
+      name: 'mod',
+      component: Mod
     },
     {
       path: '*',
