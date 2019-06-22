@@ -1,4 +1,3 @@
-import { Approval } from '../types'
 <template>
   <div class="mod">
     <section class="section">
