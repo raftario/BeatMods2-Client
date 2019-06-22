@@ -90,6 +90,7 @@ import { Approval } from '../types'
             <p class="heading">Tags</p>
             <b-taglist>
               <b-tag
+                size="is-medium"
                 v-for="t in mod.tags"
                 :key="t"
               >
