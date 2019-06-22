@@ -6,9 +6,11 @@ import { Approval } from '../types'
         <div class="level-left">
           <div class="level-item">
             <h1>
-              <span class="title is-1">{{ $route.params.modName }}</span>
-              &nbsp;
-              <span class="subtitle is-3">{{ $route.params.modVersion }}</span>
+              <span class="title is-1">
+                {{ $route.params.modName }}
+              </span> <span class="subtitle is-3">
+                {{ $route.params.modVersion }}
+              </span>
             </h1>
           </div>
         </div>
